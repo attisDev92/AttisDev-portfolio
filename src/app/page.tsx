@@ -1,3 +1,4 @@
+import About from '@/components/About'
 import Banner from '@/components/Banner'
 
 export default function Home() {
@@ -5,6 +6,7 @@ export default function Home() {
     <div className="min-h-screen bg-background transition-colors duration-300">
       <main>
         <Banner />
+        <About />
       </main>
     </div>
   )

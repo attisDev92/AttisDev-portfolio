@@ -262,13 +262,10 @@ export default function Banner() {
                       const x = Math.max(0, Math.min(info.point.x - rect.left, rect.width))
                       const percentage = (x / rect.width) * 100
 
-                      // Actualizar la posición del slider
                       setSliderPosition(percentage)
 
-                      // Actualizar posición del control deslizante
                       sliderRef.current.style.left = `${percentage}%`
 
-                      // Actualizar clip-path de la imagen superior
                       topImageRef.current.style.clipPath = `polygon(0 0, ${percentage}% 0, ${percentage}% 100%, 0 100%)`
                     }}
                     onDragEnd={() => {
@@ -296,7 +293,9 @@ export default function Banner() {
       </div>
 
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ArrowDown className="h-8 w-8 text-primary" />
+        <Link href="/#about">
+          <ArrowDown className="h-8 w-8 text-primary" />
+        </Link>
       </div>
 
       <div className="absolute bottom-0 left-0 right-0 h-px bg-primary/20"></div>
