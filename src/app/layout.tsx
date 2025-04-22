@@ -4,6 +4,7 @@ import '@/styles/globals.css'
 import { ThemeProvider } from '@/styles/theme-provider'
 import { LanguageProvider } from '@/context/language-provider'
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -25,6 +26,7 @@ export default function RootLayout({
           <LanguageProvider>
             <Header />
             {children}
+            <Footer />
           </LanguageProvider>
         </ThemeProvider>
       </body>
