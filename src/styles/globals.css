@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 180 100% 50%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 196 80% 45%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 160 84% 39%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 180 100% 50%;
+    --radius: 0.25rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 180 100% 50%;
+    --primary-foreground: 240 10% 3.9%;
+    --secondary: 196 80% 45%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 160 84% 39%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 180 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-[hsl(var(--border))];
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
+    background-image:
+      radial-gradient(hsla(var(--primary) / 0.05) 1px, transparent 1px),
+      radial-gradient(hsla(var(--primary) / 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position:
+      0 0,
+      20px 20px;
+  }
+
+  /* Retro pixel font styling */
+  h1,
+  h2,
+  h3,
+  h4,
+  .retro-text {
+    font-family: 'Press Start 2P', 'Inter', sans-serif;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+    letter-spacing: -0.025em;
+  }
+
+  /* Retro button styling */
+  .retro-button {
+    image-rendering: pixelated;
+    transition: all 0.2s ease;
+    box-shadow: 0.25rem 0.25rem 0 hsl(var(--primary));
+    border: 2px solid hsl(var(--primary));
+  }
+
+  .retro-button:hover {
+    transform: translate(-0.25rem, -0.25rem);
+    box-shadow: 0.5rem 0.5rem 0 hsl(var(--primary));
+  }
+
+  .retro-button:active {
+    transform: translate(0.125rem, 0.125rem);
+    box-shadow: 0.125rem 0.125rem 0 hsl(var(--primary));
+  }
+
+  /* Pixel borders */
+  .pixel-border {
+    position: relative;
+    border: 4px solid hsl(var(--primary));
+    box-shadow:
+      0 0 0 4px hsl(var(--primary)),
+      inset 0 0 0 2px hsl(var(--background));
+    image-rendering: pixelated;
+  }
+
+  .pixel-border::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border: 2px solid hsl(var(--primary));
+    z-index: -1;
+  }
+
+  /* 8-bit corners */
+  .bit-corner {
+    position: relative;
+  }
+
+  .bit-corner::before,
+  .bit-corner::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: hsl(var(--primary));
+  }
+
+  .bit-corner::before {
+    top: -4px;
+    left: -4px;
+  }
+
+  .bit-corner::after {
+    bottom: -4px;
+    right: -4px;
+  }
+
+  /* Scanlines effect */
+  .scanlines {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scanlines::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 1px,
+      rgba(0, 0, 0, 0.05) 1px,
+      rgba(0, 0, 0, 0.05) 2px
+    );
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  /* CRT flicker */
+  .crt-flicker {
+    animation: flicker 0.15s infinite alternate;
+  }
+
+  @keyframes flicker {
+    0% {
+      opacity: 0.97;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  /* Parallax container */
+  .parallax-container {
+    perspective: 1000px;
+    overflow: hidden;
+  }
+
+  .parallax-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: transform 0.1s ease-out;
+  }
+
+  /* Pixelated images */
+  .pixel-image {
+    image-rendering: pixelated;
+  }
+
+  /* 8-bit progress bar */
+  .bit-progress-bg {
+    height: 20px;
+    background-image: linear-gradient(
+      to right,
+      hsl(var(--primary)) 0%,
+      hsl(var(--primary)) 50%,
+      hsl(var(--background)) 50%,
+      hsl(var(--background)) 100%
+    );
+    background-size: 8px 100%;
+    border: 2px solid hsl(var(--primary));
+  }
+
+  .bit-progress-fill {
+    height: 100%;
+    background-color: hsl(var(--primary));
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Arcade cabinet frame */
+.arcade-frame {
+  position: relative;
+  border: 12px solid #111;
+  border-radius: 8px;
+  box-shadow:
+    0 0 0 4px hsl(var(--primary)),
+    0 0 0 8px #111,
+    0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.arcade-frame::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 50%, hsl(var(--accent)) 100%);
+  z-index: -1;
+  border-radius: 4px;
+}
+
+/* Game cartridge style */
+.game-cartridge {
+  position: relative;
+  border-radius: 4px 4px 12px 12px;
+  background-color: #333;
+  padding: 4px;
+  box-shadow:
+    inset 0 4px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -4px 0 rgba(0, 0, 0, 0.3);
+}
+
+.game-cartridge::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  right: 20%;
+  height: 8px;
+  background-color: #222;
+  border-radius: 0 0 4px 4px;
+}
+
+@keyframes loading-bar {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.loading-bar {
+  height: 8px;
+  background-color: hsl(var(--primary));
+  animation: loading-bar 2s linear infinite;
+}
+
+/* Pixel art clouds for parallax */
+.pixel-cloud {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  width: 60px;
+  height: 20px;
+  box-shadow:
+    20px -10px 0 hsl(var(--primary)),
+    40px 0 0 hsl(var(--primary));
+}
+
+/* Grid background */
+.grid-bg {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, hsl(var(--primary) / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(var(--primary) / 0.05) 1px, transparent 1px);
+}
+
+/* Neon glow effect */
+.neon-glow {
+  text-shadow:
+    0 0 5px hsl(var(--primary) / 0.5),
+    0 0 10px hsl(var(--primary) / 0.3),
+    0 0 15px hsl(var(--primary) / 0.2),
+    0 0 20px hsl(var(--primary) / 0.1);
+}
+
+.neon-box {
+  box-shadow:
+    0 0 5px hsl(var(--primary) / 0.5),
+    0 0 10px hsl(var(--primary) / 0.3),
+    0 0 15px hsl(var(--primary) / 0.2);
+}
+
+/* Retro wave background */
+.retro-wave {
+  position: relative;
+  overflow: hidden;
+}
+
+.retro-wave::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: repeating-linear-gradient(
+    80deg,
+    hsl(var(--primary)) 0%,
+    transparent 10%,
+    transparent 45%,
+    hsl(var(--primary)) 55%,
+    transparent 60%,
+    transparent 100%
+  );
+  opacity: 0.1;
+  transform: perspective(500px) rotateX(60deg);
+  transform-origin: bottom;
+}
+
+/* Arcade screen */
+.arcade-screen {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow:
+    inset 0 0 10px rgba(0, 0, 0, 0.8),
+    0 0 0 4px #111,
+    0 0 0 8px #222,
+    0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.arcade-screen::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, hsla(255, 255, 255, 0.1) 0%, transparent 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Pixel character animation */
+@keyframes walk {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -192px 0;
+  }
+}
+
+.pixel-character {
+  width: 48px;
+  height: 48px;
+  background-image: url('/placeholder.svg?height=48&width=192');
+  background-size: 192px 48px;
+  animation: walk 0.8s steps(4) infinite;
+}
