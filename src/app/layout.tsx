@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import '@/styles/globals.css'
-import ThemeProvider from '@/styles/theme-provider'
+import { ThemeProvider } from '@/styles/theme-provider'
+import { LanguageProvider } from '@/context/language-provider'
+import Header from '@/components/Header'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,15 +21,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} antialiased`}>
-        <ThemeProvider
-          props={{
-            attribute: 'class',
-            defaultTheme: 'system',
-            enableSystem: true,
-            disableTransitionOnChange: true,
-          }}
-        >
-          {children}
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <LanguageProvider>
+            <Header />
+            {children}
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

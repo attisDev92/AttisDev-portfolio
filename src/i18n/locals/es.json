@@ -1,0 +1,23 @@
+{
+  "nav.home": "Inicio",
+  "nav.about": "Sobre Mí",
+  "nav.projects": "Proyectos",
+  "nav.contact": "Contacto",
+  "banner.title": "Hola, Soy Desarrollador Web",
+  "banner.subtitle": "Frontend • Backend",
+  "banner.cta": "Ver Mi Trabajo",
+  "banner.downloadCV": "Descargar CV",
+  "about.title": "Sobre Mí",
+  "about.description": "Soy un desarrollador web apasionado con experiencia en la creación de aplicaciones modernas, responsivas y fáciles de usar. Con una sólida base en tecnologías frontend y backend, doy vida a ideas a través de código limpio y soluciones creativas.",
+  "about.experience": "Experiencia",
+  "about.skills": "Habilidades",
+  "projects.title": "Mis Proyectos",
+  "projects.all": "Todos",
+  "projects.frontend": "Frontend",
+  "projects.backend": "Backend",
+  "projects.uiux": "UI/UX",
+  "projects.viewProject": "Ver Proyecto",
+  "projects.viewCode": "Ver Código",
+  "footer.rights": "Todos los derechos reservados",
+  "footer.madeWith": "Hecho con ❤️ usando Next.js"
+}
