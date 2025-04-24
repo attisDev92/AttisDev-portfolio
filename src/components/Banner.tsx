@@ -43,12 +43,12 @@ export default function Banner() {
       ctx.strokeStyle = 'rgba(0, 255, 255, 0.1)'
       ctx.lineWidth = 1
 
+      const horizonY = canvas.height / 2
       ctx.beginPath()
-      ctx.moveTo(0, canvas.height / 2)
-      ctx.lineTo(canvas.width, canvas.height / 2)
+      ctx.moveTo(0, horizonY)
+      ctx.lineTo(canvas.width, horizonY)
       ctx.stroke()
 
-      const horizonY = canvas.height / 2
       const gridSize = 50
       const gridDepth = 20
 
@@ -63,7 +63,7 @@ export default function Banner() {
 
         const spacing = gridSize / (perspective + 0.1)
         const centerX = canvas.width / 2
-        const offset = (mousePosition.x - centerX) * 0.05 * perspective
+        const offset = (mousePosition.x - centerX) * 0.3 * perspective
 
         for (let x = centerX; x < canvas.width; x += spacing) {
           ctx.beginPath()
@@ -80,7 +80,7 @@ export default function Banner() {
         }
       }
 
-      const sunRadius = 50
+      const sunRadius = 0
       const sunX = canvas.width / 2
       const sunY = horizonY - 20
       const gradient = ctx.createRadialGradient(sunX, sunY, 0, sunX, sunY, sunRadius)
