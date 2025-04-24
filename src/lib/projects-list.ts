@@ -23,12 +23,7 @@ export const projects: Project[] = [
       'Página web de la Comisión Fílmica de Ecuador, con información sobre locaciones, permisos, contactos para grabar en Ecuador. Además cuenta con un sistema para que que los usuarios puedan registrar locaciones y empresas de filmación a los catálogos que se encuentran en la página. La web en su totalidad cuenta con i18n para que se pueda ver en español y en inglés y el catálogo de locaciones cuenta con geolocalización para que los usuarios puedan ver las locaciones cercanas a su ubicación.',
     descriptionEn:
       'Website of the Ecuador Film Commission, with information about locations, permissions, contacts to film in Ecuador. It also has a system for users to register locations and film production companies to the catalogs that are on the page. The web in its entirety has i18n to be viewed in Spanish and in English and the location catalog has geolocation to allow users to view locations near their location.',
-    images: [
-      '/placeholder.svg?height=600&width=800&text=Homepage',
-      '/placeholder.svg?height=600&width=800&text=Product+Page',
-      '/placeholder.svg?height=600&width=800&text=Cart',
-      '/placeholder.svg?height=600&width=800&text=Checkout',
-    ],
+    images: ['/filmcommission-1.png', '/filmcommission-2.png', '/filmcommission-3.png', '/filmcommission-4.png'],
     category: ['frontend', 'backend'],
     technologies: [
       'React',
@@ -70,12 +65,7 @@ export const projects: Project[] = [
       'Catálogo de obras cinematográficas del Ecuador, con información sobre las películas, directores, actores, géneros, etc. La web cuenta con un sistema para que los usuarios puedan registrar películas y directores a los catálogos que se encuentran en la página. La web cuenta con un repositorio de todas las películas realizadas en Ecuador, además de un sistema de registro de usuarios y de solicitud de prestamo para gestionar la exhibición de las obras en espacios públicos. Además cuenta con un registro de proyectos cinematográficos para su promoción en mercados audiovisuales alreededor del mundo.',
     descriptionEn:
       'Catalog of Ecuadorian cinematographic works, with information about movies, directors, actors, genres, etc. The web has a system for users to register movies and directors to the catalogs that are on the page. The web has a repository of all the movies made in Ecuador, as well as a user registration system and a request system for managing the exhibition of works in public spaces. In addition, it has a register of cinematographic projects for their promotion in audiovisual markets around the world.',
-    images: [
-      '/placeholder.svg?height=600&width=800&text=Dashboard',
-      '/placeholder.svg?height=600&width=800&text=Task+Board',
-      '/placeholder.svg?height=600&width=800&text=Calendar+View',
-      '/placeholder.svg?height=600&width=800&text=Team+Chat',
-    ],
+    images: ['/cinemaec-1.png', '/cinemaec-2.png', '/cinemaec-3.png', '/cinemaec-4.png', '/cinemaec-5.png'],
     category: ['frontend', 'backend'],
     technologies: ['React', 'Node.js', 'JavaScript', 'MongoDB', 'Express', 'Redux', 'Firebase', 'Material-UI'],
     demoUrl: 'https://cinemaec.com/',
@@ -107,12 +97,7 @@ export const projects: Project[] = [
       'Sistema de diseño para la web de Maxinutri Ecuador, con un diseño moderno, responsivo y atractivo para la web de la empresa, pensado en la experiencia de usuario..',
     descriptionEn:
       "Design system for the Maxinutri Ecuador web, with a modern, responsive and attractive design for the company's web page, designed for user experience.",
-    images: [
-      '/placeholder.svg?height=600&width=800&text=Components',
-      '/placeholder.svg?height=600&width=800&text=Typography',
-      '/placeholder.svg?height=600&width=800&text=Color+System',
-      '/placeholder.svg?height=600&width=800&text=Templates',
-    ],
+    images: ['/maxinutri-1.png', '/maxinutri-2.png', '/maxinutri-3.png', '/maxinutri-4.png', '/maxinutri-5.png'],
     category: ['uiux'],
     technologies: ['Figma'],
     figmaUrl: 'https://www.figma.com/design/gyHXHzY49DGqKFhcmJeXyV/Maxinutri?node-id=0-1&p=f',
@@ -126,15 +111,10 @@ export const projects: Project[] = [
       'Landing page para la web de Sam Marketing, profesional de marketing digital, con un diseño moderno, responsivo y atractivo para la web, pensado en la experiencia de usuario y en el posicionamiento SEO.',
     descriptionEn:
       "Landing page for the Sam Marketing web, professional in digital marketing, with a modern, responsive and attractive design for the company's web page, designed for user experience and SEO positioning.",
-    images: [
-      '/placeholder.svg?height=600&width=800&text=Chat+UI',
-      '/placeholder.svg?height=600&width=800&text=Group+Chat',
-      '/placeholder.svg?height=600&width=800&text=Media+Sharing',
-      '/placeholder.svg?height=600&width=800&text=User+Profile',
-    ],
+    images: ['/Sam-mk-1.png', '/Sam-mk-2.png', '/Sam-mk-3.png'],
     category: ['frontend'],
     technologies: ['Next.js', 'Tailwind CSS', 'TypeScript', 'React', 'Contentful'],
-    demoUrl: 'https://sammarketing.vercel.app/',
+    demoUrl: 'https://marketingsam.netlify.app/',
     codeUrlFrontend: 'https://github.com/attisDev92/mk_sam',
     featuresEs: [
       'Itegración con Contentful',

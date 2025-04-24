@@ -3,7 +3,16 @@
 import { useEffect, useState } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
-import { ArrowLeft, ArrowRight, ExternalLink, Github, ArrowLeftCircle, Figma } from 'lucide-react'
+import {
+  ArrowLeft,
+  ArrowRight,
+  ExternalLink,
+  Github,
+  ArrowLeftCircle,
+  Figma,
+  ChevronLeft,
+  ChevronRight,
+} from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -199,7 +208,7 @@ export default function ProjectDetail() {
                     </h2>
 
                     <div className="space-y-4">
-                      <div className="arcade-frame">
+                      <div className="arcade-frame relative">
                         <Image
                           src={project.images[activeImage] || '/placeholder.svg'}
                           alt={`${project.title} screenshot ${activeImage + 1}`}
@@ -207,27 +216,50 @@ export default function ProjectDetail() {
                           height={800}
                           className="w-full h-auto rounded-sm"
                         />
+                        {project.images.length > 1 && (
+                          <>
+                            <button
+                              onClick={() =>
+                                setActiveImage((prev) => (prev === 0 ? project.images.length - 1 : prev - 1))
+                              }
+                              className="absolute left-4 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background/90 p-2 rounded-full transition-all"
+                            >
+                              <ChevronLeft className="h-6 w-6" />
+                            </button>
+                            <button
+                              onClick={() =>
+                                setActiveImage((prev) => (prev === project.images.length - 1 ? 0 : prev + 1))
+                              }
+                              className="absolute right-4 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background/90 p-2 rounded-full transition-all"
+                            >
+                              <ChevronRight className="h-6 w-6" />
+                            </button>
+                          </>
+                        )}
                       </div>
 
-                      <div className="grid grid-cols-3 gap-4">
-                        {project.images.map((image, index) => (
-                          <button
-                            key={index}
-                            onClick={() => setActiveImage(index)}
-                            className={`border-2 rounded-sm overflow-hidden transition-all ${
-                              activeImage === index ? 'border-primary' : 'border-transparent'
-                            }`}
-                          >
-                            <Image
-                              src={image || '/placeholder.svg'}
-                              alt={`${project.title} thumbnail ${index + 1}`}
-                              width={400}
-                              height={300}
-                              className="w-full h-auto"
-                            />
-                          </button>
-                        ))}
-                      </div>
+                      {project.images.length > 1 && (
+                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
+                          {project.images.map((image, index) => (
+                            <button
+                              key={index}
+                              onClick={() => setActiveImage(index)}
+                              className={`relative aspect-video border-2 rounded-sm overflow-hidden transition-all ${
+                                activeImage === index ? 'border-primary' : 'border-transparent'
+                              }`}
+                            >
+                              <Image
+                                src={image || '/placeholder.svg'}
+                                alt={`${project.title} thumbnail ${index + 1}`}
+                                width={400}
+                                height={300}
+                                className="w-full h-full object-cover"
+                              />
+                              {activeImage === index && <div className="absolute inset-0 bg-primary/20" />}
+                            </button>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   </motion.div>
                 </div>
@@ -286,7 +318,7 @@ export default function ProjectDetail() {
                             >
                               <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
                                 <span className="relative z-10 flex items-center justify-center gap-1">
-                                  {language === 'es' ? 'Ver demo' : 'View Demo'}
+                                  {language === 'es' ? 'Ver website' : 'View Website'}
                                   <ExternalLink className="h-4 w-4" />
                                 </span>
                                 <span className="absolute inset-0 h-full w-full translate-y-9 bg-primary-foreground/20 transition-transform duration-300 group-hover:translate-y-0"></span>
