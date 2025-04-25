@@ -5,7 +5,7 @@ import Contact from '@/components/Contact'
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background transition-colors duration-300">
+    <div className="min-h-screen bg-background transition-colors duration-300 px-10">
       <main>
         <Banner />
         <About />

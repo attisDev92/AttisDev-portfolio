@@ -91,7 +91,7 @@ export default function Header() {
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-background/95 backdrop-blur-md border-b">
+        <div className="md:hidden absolute top-full left-0 w-full bg-background backdrop-blur-md border-b">
           <nav className="container flex flex-col py-4 gap-4">
             <Link
               href="#home"

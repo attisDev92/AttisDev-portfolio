@@ -23,7 +23,7 @@ export default function Contact() {
           <p className="text-lg text-foreground/80 mb-8 max-w-2xl mx-auto">
             {language === 'es'
               ? 'Siempre estoy en busca de nuevos proyectos, ideas creativas u oportunidades para ayudarte a alcanzar tu visión.'
-              : 'I&apos;m always looking for new projects, creative ideas or opportunities to help you achieve your vision.'}
+              : "I'm always looking for new projects, creative ideas or opportunities to help you achieve your vision."}
           </p>
 
           <Button
@@ -32,7 +32,7 @@ export default function Contact() {
             asChild
           >
             <Link href="/#contact">
-              <span className="relative z-10">{language === 'es' ? 'Contactame' : 'Let&apos;s connect'}</span>
+              <span className="relative z-10">{language === 'es' ? 'Contactame' : `Let's connect`}</span>
               <span className="absolute inset-0 h-full w-full translate-y-9 bg-primary-foreground/20 transition-transform duration-300 group-hover:translate-y-0"></span>
             </Link>
           </Button>

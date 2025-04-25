@@ -13,7 +13,7 @@ import { projects } from '@/lib/projects-list'
 type ProjectCategory = 'all' | 'frontend' | 'backend' | 'uiux'
 
 export default function Projects() {
-  const { t, language } = useLanguage()
+  const { t } = useLanguage()
   const { theme } = useTheme()
   const [activeCategory, setActiveCategory] = useState<ProjectCategory>('all')
   const [activeImageIndex, setActiveImageIndex] = useState<Record<number, number>>({})
@@ -89,11 +89,9 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="w-full"
             >
               <div
-                className={`
-                  w-full rounded-xl overflow-hidden
+                className={`w-full rounded-xl overflow-hidden 
                   ${
                     theme === 'dark'
                       ? 'bg-gray-800/50 border-2 border-primary/30 shadow-[0_0_15px_rgba(0,255,255,0.15)]'
@@ -164,9 +162,6 @@ export default function Projects() {
 
                 <div className="p-6 md:p-8">
                   <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-                  <p className="text-foreground/70 mb-6">
-                    {language === 'es' ? project.descriptionEs : project.descriptionEn}
-                  </p>
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.technologies.map((tech, index) => (
                       <span

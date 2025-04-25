@@ -201,14 +201,14 @@ export default function Banner() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative hidden md:block"
+            className="relative w-full max-w-[400px] mx-auto"
           >
-            <div className="arcade-screen p-1 bg-black/80 aspect-square max-w-md mx-auto">
+            <div className="arcade-screen p-1 bg-black/80 aspect-square w-full">
               <div ref={containerRef} className="relative w-full h-full overflow-hidden">
                 <div className="relative w-full h-full">
                   <div className="absolute inset-0 w-full h-full">
                     <Image
-                      src="/attis_img.png"
+                      src="/attis_img.jpg"
                       alt="Bottom Image"
                       width={400}
                       height={400}
@@ -226,7 +226,7 @@ export default function Banner() {
                     }}
                   >
                     <Image
-                      src="/attis 2.jpg"
+                      src="/attis-2.jpg"
                       alt="Top Image"
                       width={400}
                       height={400}
