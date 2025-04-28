@@ -167,7 +167,7 @@ export default function Banner() {
                 className="retro-button group relative overflow-hidden rounded-md px-6 py-3 font-bold text-primary-foreground transition-all bg-primary border-primary"
                 asChild
               >
-                <Link href="#/projects">
+                <Link href="/#projects">
                   <span className="relative z-10 flex items-center gap-2">
                     {t('banner.cta')}
                     <ChevronRight className="h-4 w-4" />

@@ -114,7 +114,7 @@ export const projects: Project[] = [
     images: ['/Sam-mk-1.png', '/Sam-mk-2.png', '/Sam-mk-3.png'],
     category: ['frontend'],
     technologies: ['Next.js', 'Tailwind CSS', 'TypeScript', 'React', 'Contentful'],
-    demoUrl: 'https://marketingsam.netlify.app/',
+    demoUrl: 'https://mktsam.netlify.app/',
     codeUrlFrontend: 'https://github.com/attisDev92/mk_sam',
     featuresEs: [
       'Itegración con Contentful',
@@ -140,12 +140,7 @@ export const projects: Project[] = [
       'Aplicación web y mobile para el intercambio, venta y donación de ropa usada y accesorios. La web cuenta con un sistema de registro de usuarios, un sistema de chat para la comunicación entre usuarios, un sistema de compra y venta de productos, un sistema de donación de productos y un sistema de seguimiento de envíos.',
     descriptionEn:
       'Web and mobile application for the exchange, sale and donation of used clothing and accessories. The web has a user registration system, a chat system for communication between users, a purchase and sale system, a donation system of products and a shipping tracking system.',
-    images: [
-      '/placeholder.svg?height=600&width=800&text=Components',
-      '/placeholder.svg?height=600&width=800&text=Screen+Templates',
-      '/placeholder.svg?height=600&width=800&text=Dark+Mode',
-      '/placeholder.svg?height=600&width=800&text=Animation+Guide',
-    ],
+    images: [],
     category: ['backend'],
     technologies: ['Nest.js', 'PostgreSQL', 'TypeScript', 'Prisma'],
     codeUrlBackend: 'https://github.com/attisDev92/BLACKBOX_API',
@@ -173,12 +168,7 @@ export const projects: Project[] = [
       'App Mobile donde los usuarios pueden ver eventos deportivos de competencia y entretenimeinto para deportes como running, cycling, triatlón, etc. La app cuenta con un sistema de registro de usuarios, un sistema de chat para la comunicación entre usuarios.',
     descriptionEn:
       'Mobile application where users can view sports events and entertainment competitions like running, cycling, triathlon, etc. The app has a user registration system, a chat system for communication between users.',
-    images: [
-      '/placeholder.svg?height=600&width=800&text=Architecture',
-      '/placeholder.svg?height=600&width=800&text=Dashboard',
-      '/placeholder.svg?height=600&width=800&text=Monitoring',
-      '/placeholder.svg?height=600&width=800&text=Configuration',
-    ],
+    images: [],
     category: ['backend', 'frontend'],
     technologies: ['Nest.js', 'PostgreSQL', 'React Native', 'Expo', 'Next.js', 'TypeScript', 'Firebase', 'Storybook'],
     codeUrlFrontend: 'https://github.com/attisDev92/run-bike-app-API',
