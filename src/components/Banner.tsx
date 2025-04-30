@@ -143,7 +143,7 @@ export default function Banner() {
       <div className="absolute inset-0 bg-gradient-to-b from-background/0 via-background/0 to-background"></div>
 
       <div className="container relative z-10">
-        <div className="grid md:grid-cols-2 gap-8 items-center">
+        <div className="flex flex-col  items-center justify-between gap-8">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
